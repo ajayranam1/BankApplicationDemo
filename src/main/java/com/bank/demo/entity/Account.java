@@ -7,7 +7,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
-import com.bank.demo.Model.AccountType;
+import com.bank.demo.util.AccountType;
+
 
 @Entity
 public class Account {

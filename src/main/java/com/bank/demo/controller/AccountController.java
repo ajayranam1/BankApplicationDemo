@@ -14,6 +14,7 @@ import com.bank.demo.dto.BeneficiaryRequest;
 import com.bank.demo.dto.BeneficiaryResponse;
 import com.bank.demo.entity.Account;
 import com.bank.demo.entity.Beneficiary;
+import com.bank.demo.exception.BeneficiaryAlreadyExistException;
 import com.bank.demo.service.impl.AccountService;
 
 @RestController
@@ -28,7 +29,7 @@ public class AccountController {
 	}
 
 	@PostMapping("/addbeneficiary")
-	public BeneficiaryResponse addNewBeneficiary(@RequestBody @Validated BeneficiaryRequest beneficiaryRequest) throws Exception {
+	public BeneficiaryResponse addNewBeneficiary(@RequestBody @Validated BeneficiaryRequest beneficiaryRequest) throws BeneficiaryAlreadyExistException {
 		Beneficiary bene=accountService.addNewBeneficiary(beneficiaryRequest);
 		
 		return new BeneficiaryResponse("Beneficiary Added Successfully", bene.getBeneId());
