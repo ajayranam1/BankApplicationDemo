@@ -20,12 +20,13 @@ public class MyUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String customerId) throws UsernameNotFoundException {
-		Customer customer = customerRepository.findByCutomerId(customerId);
+		Customer customer = customerRepository.findByCustomerId(customerId);
+		System.out.println("customer---"+customer);
 		if (null == customer) {
 			throw new UsernameNotFoundException(customerId);
 		}
 
-		return new User(customer.getCutomerId(), customer.getPassword(), new ArrayList<>());
+		return new User(customer.getCustomerId(), customer.getPassword(), new ArrayList<>());
 	}
 
 }
