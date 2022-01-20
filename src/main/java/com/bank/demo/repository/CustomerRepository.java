@@ -6,6 +6,6 @@ import com.bank.demo.entity.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 	
-	public Customer findByCutomerId(String customerId);
+	public Customer findByCustomerId(String customerId);
 
 }
