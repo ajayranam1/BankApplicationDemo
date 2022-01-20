@@ -11,14 +11,15 @@ import com.bank.demo.repository.CustomerRepository;
 
 @RestController
 public class CustomerController {
-	
+
 	@Autowired
 	private CustomerRepository customerRepository;
-	
-	/*
-	 * @GetMapping("/getCust/{customerId}") public Customer
-	 * getCustomer(@PathVariable String customerId) { return
-	 * customerRepository.findByCutomerId(customerId); }
-	 */
 
+	
+	@GetMapping("/getCust/{customerId}")
+	public Customer getCustomer(@PathVariable String customerId) {
+		return customerRepository.findByCustomerId(customerId);
+	}
+	 
+	
 }
