@@ -15,24 +15,24 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(unique = true)
-	private String cutomerId;
+	private String customerId;
 	private String firstName;
 	private String lastName;
 	private String address;
-	private String idPrrof;
+	private String idProof;
 	private String password;
 	private Date dob;
 	
 	
 	
-	public Customer(String cutomerId, String firstName, String lastName, String address, String idPrrof,
+	public Customer(String customerId, String firstName, String lastName, String address, String idProof,
 			String password, Date dob) {
 		super();
-		this.cutomerId = cutomerId;
+		this.customerId = customerId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
-		this.idPrrof = idPrrof;
+		this.idProof = idProof;
 		this.password = password;
 		this.dob = dob;
 	}
@@ -51,11 +51,11 @@ public class Customer {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCutomerId() {
-		return cutomerId;
+	public String getCustomerId() {
+		return customerId;
 	}
-	public void setCutomerId(String cutomerId) {
-		this.cutomerId = cutomerId;
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -75,11 +75,11 @@ public class Customer {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getIdPrrof() {
-		return idPrrof;
+	public String getIdProof() {
+		return idProof;
 	}
-	public void setIdPrrof(String idPrrof) {
-		this.idPrrof = idPrrof;
+	public void setIdProof(String idProof) {
+		this.idProof = idProof;
 	}
 	public String getPassword() {
 		return password;
